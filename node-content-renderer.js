@@ -46,7 +46,7 @@ class FileThemeNodeContentRenderer extends Component {
       rowDirection,
       ...otherProps
     } = this.props;
-    const nodeTitle = title || node.title;
+    const nodeTitle = title || `${node.identifier ? `(${node.identifier})`: ''} ${node.title}`;
 
     const isDraggedDescendant = draggedNode && isDescendant(draggedNode, node);
     const isLandingPadActive = !didDrop && isDragging;
@@ -124,7 +124,11 @@ class FileThemeNodeContentRenderer extends Component {
         >
           {/* Set the row preview to be used during drag and drop */}
           {connectDragPreview(
-            <div style={{ display: 'flex' }}>
+            <div style={{
+              display: 'flex',
+              width: '100%',
+              height: '100%',
+            }}>
               {scaffold}
               <div
                 className={
@@ -139,6 +143,7 @@ class FileThemeNodeContentRenderer extends Component {
                 }
                 style={{
                   opacity: isDraggedDescendant ? 0.5 : 1,
+                  flex: 1,
                   ...style,
                 }}
               >

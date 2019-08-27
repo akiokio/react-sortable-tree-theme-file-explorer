@@ -1,4 +1,10 @@
 .node {
   min-width: 100%;
   position: relative;
+
+  border-top: 1px solid #E0E0E0;
+
+  &:first-of-type {
+    border-top: 0px;
+  }
 }

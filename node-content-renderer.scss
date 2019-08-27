@@ -2,9 +2,12 @@
   height: 100%;
   box-sizing: border-box;
   cursor: move;
+  display: flex;
+  align-items: center;
 
   &:hover {
     opacity: 0.7;
+    background: #F2F2F2;
   }
 
   &:active {
@@ -86,22 +89,24 @@
   @extend %rowItem;
   position: relative;
   height: 100%;
-  flex: 1 0 auto;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 14px;
 }
 
 .rowLabel {
   @extend %rowItem;
-  flex: 0 1 auto;
+  flex: 1;
   padding-right: 20px;
 }
 
 .rowToolbar {
   @extend %rowItem;
-  flex: 0 1 auto;
   display: flex;
+  flex: 0;
+  margin: 0 16px 0 0;
 }
 
 .toolbarButton {
@@ -116,10 +121,10 @@
   padding: 0;
   z-index: 2;
   position: absolute;
-  top: 45%;
-  width: 30px;
-  height: 30px;
-  transform: translate3d(-50%, -50%, 0);
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  transform: translate3d(0%, -50%, 0);
   cursor: pointer;
 
   &::after {
@@ -130,7 +135,7 @@
     border: solid transparent 10px;
     border-left-width: 7px;
     border-right-width: 7px;
-    border-top-color: gray;
+    border-top-color: #4F4F4F;
   }
 
   &:hover::after {
@@ -169,6 +174,7 @@
   position: relative;
   display: inline-block;
   flex: 0 0 auto;
+  margin: 0 8px 0 0;
 }
 
 .absoluteLineBlock {

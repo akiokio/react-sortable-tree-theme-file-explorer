@@ -1,4 +1,11 @@
 body {
   padding: 0;
   margin: 0;
+
+  font-family: 'Muli', sans-serif;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
 }
